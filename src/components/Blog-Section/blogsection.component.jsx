@@ -1,5 +1,16 @@
 import React from 'react';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Navigation, Pagination, A11y } from 'swiper';
+import 'swiper/swiper.scss';
+import 'swiper/components/navigation/navigation.scss';
+import 'swiper/components/pagination/pagination.scss';
+import 'swiper/components/scrollbar/scrollbar.scss';
+import './blogsection.style.css';
+
 import Blog from '../Blog/blog.component';
+
+SwiperCore.use([Navigation, Pagination, A11y]);
 
 class BlogSection extends React.Component{
     constructor(){
@@ -42,19 +53,33 @@ class BlogSection extends React.Component{
     render(){
         const {blogs} = this.state;
         return(
-            <div className='block'>
-                <div className='font-body text-3xl flex flex-col items-center pb-4'>
-                    MY BLOGS
-                    <span class='bg-gray-700 h-1 w-20 block mt-4'></span>
+            <React.Fragment>
+                <div className='block'>
+                    <div className='font-body text-3xl flex flex-col items-center pb-4'>
+                        MY BLOGS
+                        <span class='bg-gray-700 h-1 w-20 block mt-4'></span>
+                    </div>
+                    <div className='w-full justify-center align-middle text-black p-4'>
+                        <Swiper 
+                            id='main'
+                            spaceBetween={50}
+                            slidesPerView={2}
+                            navigation
+                            pagination={{ clickable: true }}
+                            onSwiper={(swiper) => console.log(swiper)}
+                            onSlideChange={() => console.log('slide change')}
+                        >
+                            {
+                                blogs.map(({id, ...otherprops}) => (
+                                    <SwiperSlide key={id} className='my-0 mx-auto'>
+                                        <Blog key={id} {...otherprops} />
+                                    </SwiperSlide>
+                                ))
+                            }
+                        </Swiper>
+                    </div>
                 </div>
-                <div className='w-full md:grid md:grid-cols-3 md:gap-6 justify-items-center align-middle items-center text-black grid grid-cols-1 gap-4 p-4'>
-                    {
-                        blogs.map(({id, ...otherprops}) => (
-                            <Blog key={id} {...otherprops} />
-                        ))
-                    }
-                </div>
-            </div>
+            </React.Fragment>
         );
     }
 }
