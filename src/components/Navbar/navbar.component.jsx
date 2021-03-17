@@ -1,6 +1,6 @@
 import React from 'react';
 import NavLinks from "../Nav_links/nav_links.component";
-import "./Navbar.style.css";
+import "./navbar.style.css";
 
 let isOpen = false;
 
