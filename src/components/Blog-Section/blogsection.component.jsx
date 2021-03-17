@@ -52,7 +52,7 @@ class BlogSection extends React.Component{
         const {blogs} = this.state;
         return(
             <React.Fragment>
-                <div className='block'>
+                <div className='block' id='blog'>
                     <div className='font-body text-3xl flex flex-col items-center pb-4'>
                         MY BLOGS
                         <span class='bg-gray-700 h-1 w-20 block mt-4'></span>
