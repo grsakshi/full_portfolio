@@ -8,6 +8,9 @@ module.exports = {
       },
       'width': {
         'big': '30rem'
+      },
+      fontFamily: {
+        body: ['Cormorant Unicase', 'serif']
       }
     },
   },

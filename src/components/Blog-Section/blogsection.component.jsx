@@ -42,12 +42,18 @@ class BlogSection extends React.Component{
     render(){
         const {blogs} = this.state;
         return(
-            <div className='w-full md:grid md:grid-cols-3 md:gap-6 justify-items-center bg-gray-300 align-middle items-center text-black grid grid-cols-1 gap-4 p-4'>
-                {
-                    blogs.map(({id, ...otherprops}) => (
-                        <Blog key={id} {...otherprops} />
-                    ))
-                }
+            <div className='block'>
+                <div className='font-body text-3xl flex flex-col items-center pb-4'>
+                    MY BLOGS
+                    <span class='bg-gray-700 h-1 w-20 block mt-4'></span>
+                </div>
+                <div className='w-full md:grid md:grid-cols-3 md:gap-6 justify-items-center align-middle items-center text-black grid grid-cols-1 gap-4 p-4'>
+                    {
+                        blogs.map(({id, ...otherprops}) => (
+                            <Blog key={id} {...otherprops} />
+                        ))
+                    }
+                </div>
             </div>
         );
     }
