@@ -1,16 +1,14 @@
 import React from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Navigation, Pagination, A11y } from 'swiper';
+import SwiperCore, { Navigation, A11y } from 'swiper';
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
-import 'swiper/components/pagination/pagination.scss';
-import 'swiper/components/scrollbar/scrollbar.scss';
 import './blogsection.style.css';
 
 import Blog from '../Blog/blog.component';
 
-SwiperCore.use([Navigation, Pagination, A11y]);
+SwiperCore.use([Navigation, A11y]);
 
 class BlogSection extends React.Component{
     constructor(){
@@ -62,16 +60,15 @@ class BlogSection extends React.Component{
                     <div className='w-full justify-center align-middle text-black p-4'>
                         <Swiper 
                             id='main'
-                            spaceBetween={50}
-                            slidesPerView={2}
+                            spaceBetween={20}
+                            slidesPerView={1}
                             navigation
-                            pagination={{ clickable: true }}
                             onSwiper={(swiper) => console.log(swiper)}
                             onSlideChange={() => console.log('slide change')}
                         >
                             {
                                 blogs.map(({id, ...otherprops}) => (
-                                    <SwiperSlide key={id} className='my-0 mx-auto'>
+                                    <SwiperSlide key={id}>
                                         <Blog key={id} {...otherprops} />
                                     </SwiperSlide>
                                 ))
