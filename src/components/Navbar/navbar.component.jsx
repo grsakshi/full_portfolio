@@ -32,8 +32,8 @@ const handleClick = () => {
 };
 
 const Navbar = () => (
-  <div className="block">
-    <div className="h-16 bg-gray-900 text-gray-300 flex justify-between justify-items-center font-mono">
+  <div className="block bg-gray-900">
+    <div className="h-16 text-gray-300 flex justify-between justify-items-center font-mono">
       <div className="text-2xl py-3 px-8 uppercase select-none tracking-widest">
         Navbar
       </div>
@@ -51,7 +51,7 @@ const Navbar = () => (
       </div>
     </div>
     <div
-      className="hidden sm:hidden bg-gray-900 text-gray-300 text-lg py-3" 
+      className="hidden sm:hidden text-gray-300 text-lg py-3" 
       id="drop-down"
     >
       <NavLinks/>
