@@ -3,7 +3,7 @@ import React from 'react';
 import Navbar from './components/Navbar/navbar.component';
 import Hero from './components/Hero/hero.component';
 import Footer from './components/Footer/footer.component';
-import BlogSection from './components/Blog-Section/blogsection.component';
+import G3BlogSection from './components/G3Blog-Section/g3blogsection.component';
 import Experience from './components/Experience/experience.component';
 import ProjectSection from './components/Project-Section/projectsection.component';
 
@@ -15,7 +15,7 @@ function App() {
         <Hero />
         <ProjectSection />
         <Experience />
-        <BlogSection />
+        <G3BlogSection />
         <Footer />
     </div>
   );

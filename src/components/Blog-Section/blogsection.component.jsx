@@ -61,7 +61,11 @@ class BlogSection extends React.Component{
                         <Swiper 
                             id='main'
                             spaceBetween={20}
-                            slidesPerView={1}
+                            slidesPerView={
+                                window.screen.width >= 1280 ? 
+                                3 : window.screen.width > 768 ? 
+                                2 : 1
+                            }
                             navigation
                             onSwiper={(swiper) => console.log(swiper)}
                             onSlideChange={() => console.log('slide change')}

@@ -59,8 +59,15 @@ class ProjectSection extends React.Component{
                     <div className='w-full justify-items-center align-middle items-center text-white py-6 px-2'> 
                         <Swiper 
                             id='main'
-                            spaceBetween={20}
-                            slidesPerView={2}
+                            spaceBetween={
+                                window.screen.width >= 1280 ? 
+                                10 : 20
+                            }
+                            slidesPerView={
+                                window.screen.width >= 1280 ? 
+                                3 : window.screen.width > 768 ? 
+                                2 : 1
+                            }
                             navigation
                             onSwiper={(swiper) => console.log(swiper)}
                             onSlideChange={() => console.log('slide change')}
